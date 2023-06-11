@@ -143,8 +143,8 @@ const Board = ({
           </Box>
           <Canvas
             camera={{
-              position: [0, 140, 70],
-              rotation: [-Math.PI / 2.5, 0, 0],
+              position: [0, 140, 55],
+              rotation: [-Math.PI / 2.3, 0, 0],
             }}
             shadows
           >
