@@ -3,7 +3,6 @@ import { useState } from "react";
 import GameRoom from "../GameRoom/GameRoom";
 import Form from "../ui-kit/form/Form";
 import { Box, CardMedia } from "@mui/material";
-//import bg from "../../assets/video/bg.mp4";
 import bg from "../../assets/video/bg_2.mp4";
 import bgSecond from "../../assets/video/bg_1.mp4";
 import { CustomSwitcher } from "../ui-kit/switcher/CustomSwitcher";
