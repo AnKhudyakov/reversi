@@ -3,8 +3,9 @@ import { useState } from "react";
 import GameRoom from "../GameRoom/GameRoom";
 import Form from "../ui-kit/form/Form";
 import { Box, CardMedia } from "@mui/material";
-import bg from "../../assets/video/bg.mp4";
-import bgSecond from "../../assets/video/bg-second.mp4";
+//import bg from "../../assets/video/bg.mp4";
+import bg from "../../assets/video/bg_2.mp4";
+import bgSecond from "../../assets/video/bg_1.mp4";
 import { CustomSwitcher } from "../ui-kit/switcher/CustomSwitcher";
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         {...label}
         color="default"
         sx={{
-          zIndex: 1,
+          zIndex: 3,
           position: "absolute",
           bottom: "5%",
           left: "calc(50% - 24px)",
@@ -51,14 +52,16 @@ function App() {
           width: "100%",
           height: "100%",
           border: "none",
+          zIndex: 1,
         }}
         component="video"
         src={toggleTheme ? bg : bgSecond}
         autoPlay={true}
         muted={true}
         height="100%"
-        loop={!toggleTheme}
+        loop
       />
+      <Box width={'100%'} height={'100%'} bgcolor={"rgba(4,4,4,0.4)"} position={"absolute"} zIndex={1}></Box>
       {connected ? (
         <GameRoom
           messages={messages}
@@ -91,7 +94,7 @@ function App() {
       {info && (
         <Box
           sx={{
-            zIndex: 1,
+            zIndex: 2,
             position: "absolute",
             bottom: "20%",
             left: "calc(50% - 105px)",

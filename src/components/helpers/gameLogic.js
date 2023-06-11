@@ -3,9 +3,9 @@ import { B, W, E, P, N } from "./constants.js";
 export const getCells = () => {
   let cells = [],
     y = 0;
-  while (y < 8) {
+  while (y < N) {
     let x = [];
-    while (x.length < 8) {
+    while (x.length < N) {
       x.push(E);
     }
     cells.push(x);
@@ -72,9 +72,7 @@ const countToken = (board) => {
 };
 
 export const makeMove = (board, y, x, player) => {
-  // reverse
   let newBoard = reverse(board, player, y, x);
-  // update board
   player = 1 - player;
   newBoard = searchPlaceble(newBoard, player);
   return newBoard;

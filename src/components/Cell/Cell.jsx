@@ -13,9 +13,7 @@ const Cell = ({
   placeble,
 }) => {
   const [model, setModel] = useState(modelEmpty);
-  //console.log("VALUE", board[coord.y][coord.x]);
   useEffect(() => {
-    //console.log("HERE");
     switch (board[coord.y][coord.x]) {
       case W:
         setModel(nullModel);
@@ -31,8 +29,6 @@ const Cell = ({
         break;
     }
   }, [update, toggleTheme]);
-  //console.log(board);
-  //console.log("Cell",board);
   return (
     <primitive
       object={model.scene.clone(true)}

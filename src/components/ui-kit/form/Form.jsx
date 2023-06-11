@@ -96,6 +96,8 @@ to {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        position: "relative",
+        zIndex: 2,
       }}
     >
       <FormControl sx={{ mb: 5, width: "25ch" }} variant="outlined">

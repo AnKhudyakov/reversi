@@ -22,11 +22,11 @@ const GameRoom = ({
         sx={{
           maxWidth: "250px",
           height: "80px",
-          zIndex: 1,
+          zIndex: 2,
           color: "white",
           position: "relative",
           m: "0 auto",
-          mb:1,
+          mb: 1,
           pt: "50px",
           display: "flex",
         }}
@@ -62,7 +62,7 @@ const GameRoom = ({
       ) : (
         <Typography
           sx={{
-            zIndex: 1,
+            zIndex: 2,
             color: "white",
             position: "relative",
             py: 4,

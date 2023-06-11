@@ -11,7 +11,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Canvas, useLoader } from "@react-three/fiber";
 import positions from "../helpers/positions";
 import BoardRow from "../BoardRow/BoardRow";
-import { B, W, E, P } from "../helpers/constants.js";
+import { B, W, P } from "../helpers/constants.js";
 
 const Board = ({
   messages,
@@ -94,18 +94,18 @@ const Board = ({
     }
   }, [restart]);
 
-  const boardThemeSecord = useLoader(GLTFLoader, "./models/boardReversi.glb");
-  const boardThemeFirst = useLoader(GLTFLoader, "./models/board.glb");
+  const boardThemeSecord = useLoader(GLTFLoader, "./models/board_first.glb");
+  const boardThemeFirst = useLoader(GLTFLoader, "./models/board_second.glb");
   const tokenWhite = useLoader(GLTFLoader, "./models/token_white.glb");
   const tokenBlack = useLoader(GLTFLoader, "./models/token_black.glb");
-  const emptyFirst = useLoader(GLTFLoader, "./models/empty.glb");
-  const placeble = useLoader(GLTFLoader, "./models/placeble.glb");
+  const emptyFirst = useLoader(GLTFLoader, "./models/empty_reversi_.glb");
+  const placeble = useLoader(GLTFLoader, "./models/placeble_rev.glb");
 
   return (
     <section className="main-section">
       {!end ? (
         <Box
-          sx={{ width: "80vmin", position: "relative" }}
+          sx={{ width: "80vmin", position: "relative",zIndex: 2, }}
           maxHeight={"70vmin"}
           height={"70vmin"}
           margin={"0 auto"}
@@ -117,7 +117,6 @@ const Board = ({
               justifyContent: "space-around",
               maxWidth: "70%",
               m: "0 auto",
-              zIndex: 1,
               color: "white",
               position: "relative",
               textAlign: "center",
@@ -194,7 +193,7 @@ const Board = ({
       ) : (
         <Box
           sx={{
-            zIndex: 1,
+            zIndex: 2,
             color: "white",
             position: "relative",
             textAlign: "center",
@@ -204,7 +203,8 @@ const Board = ({
           <Typography sx={{ zIndex: 1, color: "white" }}>
             Game over! <br /> {end}
           </Typography>
-          <Box sx={{
+          <Box
+            sx={{
               display: "flex",
               justifyContent: "space-around",
               maxWidth: "300px",
@@ -216,7 +216,9 @@ const Board = ({
               borderRadius: "5px",
               bgcolor: "rgba(4,4,4,0.3)",
               p: 1,
-            }}><Typography>
+            }}
+          >
+            <Typography>
               Count Black:
               <br />
               {count.black}
@@ -225,7 +227,8 @@ const Board = ({
               Count White:
               <br />
               {count.white}
-            </Typography></Box>
+            </Typography>
+          </Box>
           <Button
             sx={{ bgcolor: "grey", color: "white", mt: "20px" }}
             onClick={() => {

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Cell from "../Cell/Cell";
 
 const BoardRow = ({
