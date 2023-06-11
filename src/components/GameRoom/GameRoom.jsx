@@ -26,6 +26,7 @@ const GameRoom = ({
           color: "white",
           position: "relative",
           m: "0 auto",
+          mb:1,
           pt: "50px",
           display: "flex",
         }}
